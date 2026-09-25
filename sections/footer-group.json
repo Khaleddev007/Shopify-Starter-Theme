@@ -8,37 +8,19 @@
  * ------------------------------------------------------------
  */
 {
-
-    "type": "header",
-    "name": "Header Group",
+    "type": "footer",
+    "name": "Footer Group",
 
     "sections": {
-
-        "Announcementbar" : {
-            "type": "announcementbar",
-            "settings": {}
-        },
-
-        "Header" : {
-            "type": "header",
+        "Footer_sec" : {
+            "type": "footer",
             "settings": {}
         }
-
-
     },
 
     "order": [
-        "Announcementbar",
-        "Header"
-
+        "Footer_sec"
     ]
-
-
-
 }
-
-
-
-
 
 

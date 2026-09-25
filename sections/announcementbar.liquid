@@ -1,0 +1,77 @@
+
+{% if section.settings.show_top_bar %}
+<div class="announcement-bar-wrap text-{{ section.settings.alignment }}" style="background-color: {{ section.settings.top_bar_bg }}; color: {{ section.settings.top_bar_text_color }}">
+    {{ section.settings.top_bar_text  }}
+</div>
+{% endif %}
+
+
+
+
+{% schema %}
+    {
+        "name": "Top Announcement Bar",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Sample Text"
+            },
+
+            {
+                "type": "checkbox",
+                "id": "show_top_bar",
+                "label": "Top Bar Enable",
+                "default": true
+            },
+
+
+            {
+                "type": "text",
+                "id": "top_bar_text",
+                "label": "Top Bar Text",
+                "default": "আমাদের দোকানে স্বাগতম! ফ্রি শিপিং পান ৫০$ অর্ডারে।"
+            },
+
+            {
+                "type": "color",
+                "id": "top_bar_bg",
+                "label": "Top Bar Background Color",
+                "default": "#000000"
+                },
+
+            {
+                "type": "color",
+                "id": "top_bar_text_color",
+                "label": "Top Bar Text Color",
+                "default": "#ffffff"
+            },
+
+            {
+                "type": "select",
+                "id": "alignment",
+                "label": "Text Alignment",
+                "options": [
+                    {
+                    "value": "start",
+                    "label": "Left"
+                    },
+                    {
+                    "value": "center",
+                    "label": "Center"
+                    },
+                    {
+                    "value": "end",
+                    "label": "Right"
+                    }
+                ],
+                "default": "center"
+                }
+
+
+
+        ]
+    }
+{% endschema %}
+
+
+

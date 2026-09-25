@@ -1,0 +1,87 @@
+<div class="header-section">
+  {{section.settings.header_text}}
+
+  {% if section.settings.logo != blank %}
+  <div class="logo">
+    <img src="{{ section.settings.logo | image_url: width: section.settings.logo_width }}" alt="{{ shop.name }}">
+  </div>
+  {% else %}
+  <h2>{{ shop.name }}</h2>
+  {% endif %}
+
+
+<div class="mainmenu">
+
+{% if section.settings.menu != blank %}
+
+    <ul class="menu-wrapper">
+
+ {% for link in section.settings.menu.links %}
+
+    <li><a href="{{ link.url }}"> {{ link.title }}</a></li>
+
+ {% endfor %}
+
+    </ul>
+
+{% endif %}
+
+
+</div>
+
+
+<a href="{{ routes.cart_url }}">Cart: {{ cart.item_count }}</a>
+
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Main Header",
+  "settings": [
+    {
+    "type": "color",
+    "id": "header_bg",
+    "label": "Header Background Color",
+    "default": "#000000"
+    },
+
+    {
+        "type": "text",
+        "id": "header_text",
+        "label": "Header Text",
+        "default": "Header Main Text"
+    },
+
+   {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Upload logo"
+    },
+
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 120,
+      "unit": "px",
+      "label": "Set Logo Width"
+    },
+
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Select Menu",
+      "default": "main-menu"
+    }
+
+
+
+  ]
+}
+{% endschema %}
+
+
