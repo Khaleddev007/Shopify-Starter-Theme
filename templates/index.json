@@ -23,7 +23,7 @@
       "type": "featured-collection",
       "name": "Product Collection",
       "settings": {
-        "collection": "",
+        "collection": "polo",
         "heading": "Featured Section New",
         "subheading": "<p>Sub Heading</p>"
       }
