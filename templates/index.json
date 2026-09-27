@@ -1,11 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "image_banner": {
-            "type": "image-banner",
-            "settings": {}
-        }
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {
+        "heading": "This is Heading",
+        "subheading": "",
+        "label_1": "Know More",
+        "url_1": "",
+        "banner_content_width": 50
+      }
     },
-    "order":[
-        "image_banner"
-    ]
+    "featured_collection_LCwNF3": {
+      "type": "featured-collection",
+      "name": "Product Collection",
+      "settings": {
+        "collection": "",
+        "heading": "Featured Section New",
+        "subheading": "<p>Sub Heading</p>"
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection_LCwNF3"
+  ]
 }
