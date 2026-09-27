@@ -1,13 +1,23 @@
 <div class="header-section">
   {{section.settings.header_text}}
 
-  {% if section.settings.logo != blank %}
+  
   <div class="logo">
-    <img src="{{ section.settings.logo | image_url: width: section.settings.logo_width }}" alt="{{ shop.name }}">
-  </div>
+
+  <a href="{{ shop.url }}" class="logo-wrap-box">
+
+  {% if settings.logo != blank %}
+
+    <img src="{{ settings.logo | image_url: width: settings.logo_width }}" alt="{{ shop.name }}">
+
   {% else %}
   <h2>{{ shop.name }}</h2>
   {% endif %}
+
+  </a>
+
+  </div>
+
 
 
 <div class="mainmenu">
@@ -76,23 +86,6 @@
         "id": "header_text",
         "label": "Header Text",
         "default": "Header Main Text"
-    },
-
-   {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Upload logo"
-    },
-
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 250,
-      "step": 10,
-      "default": 120,
-      "unit": "px",
-      "label": "Set Logo Width"
     },
 
     {

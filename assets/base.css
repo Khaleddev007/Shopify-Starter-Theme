@@ -5,3 +5,8 @@ html{
 .new-item {
     text-align: center;
 }
+
+.banner-image-inner img {
+    width: 100%;
+    height: auto;
+}
