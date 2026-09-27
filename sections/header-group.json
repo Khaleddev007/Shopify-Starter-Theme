@@ -26,6 +26,7 @@
       "settings": {
         "header_bg": "#000000",
         "header_text": "Header Main Text",
+        "logo": "shopify://shop_images/logo-store.png",
         "logo_width": 120,
         "menu": "main-menu"
       }
