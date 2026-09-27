@@ -28,6 +28,10 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
+
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+
+
     {{ content_for_header }}
 
     {%- liquid
@@ -260,7 +264,7 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    <a class="skip-to-content-link button visually-hidden d-none" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
@@ -320,6 +324,6 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    
+
   </body>
 </html>

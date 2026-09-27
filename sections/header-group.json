@@ -8,31 +8,37 @@
  * ------------------------------------------------------------
  */
 {
-  "type": "header",
-  "name": "Header Group",
-  "sections": {
-    "Announcementbar": {
-      "type": "announcementbar",
-      "settings": {
-        "show_top_bar": true,
-        "top_bar_text": "Free Shipping!",
-        "top_bar_bg": "#000000",
-        "top_bar_text_color": "#ffffff",
-        "alignment": "center"
-      }
+
+    "type": "header",
+    "name": "Header Group",
+
+    "sections": {
+
+        "Announcementbar" : {
+            "type": "announcementbar",
+            "settings": {}
+        },
+
+        "Header" : {
+            "type": "header",
+            "settings": {}
+        }
+
+
     },
-    "Header": {
-      "type": "header",
-      "settings": {
-        "header_bg": "#000000",
-        "header_text": "Header Main Text",
-        "logo_width": 120,
-        "menu": "main-menu"
-      }
-    }
-  },
-  "order": [
-    "Announcementbar",
-    "Header"
-  ]
+
+    "order": [
+        "Announcementbar",
+        "Header"
+
+    ]
+
+
+
 }
+
+
+
+
+
+

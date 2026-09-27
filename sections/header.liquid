@@ -20,6 +20,30 @@
 
     <li><a href="{{ link.url }}"> {{ link.title }}</a></li>
 
+    {% if link.links.size > 0 %}
+
+    <li class="nav-item-dropdown">
+
+    <a href="{{ link.url }}">{{ link.title }}</a>
+
+    <ul class="dropdown">
+
+    
+
+      {% for child in link.links %} 
+
+        <li><a href="{{ child.url }}"> {{ child.title }}</a></li>
+
+      {% endfor %}
+
+    </ul>
+
+
+    </li>
+
+  {% endif %}
+
+
  {% endfor %}
 
     </ul>
