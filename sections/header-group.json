@@ -8,37 +8,40 @@
  * ------------------------------------------------------------
  */
 {
-
-    "type": "header",
-    "name": "Header Group",
-
-    "sections": {
-
-        "Announcementbar" : {
-            "type": "announcementbar",
-            "settings": {}
-        },
-
-        "Header" : {
-            "type": "header",
-            "settings": {}
-        }
-
-
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "Announcementbar": {
+      "type": "announcementbar",
+      "settings": {
+        "show_top_bar": true,
+        "top_bar_text": "আমাদের দোকানে স্বাগতম! ফ্রি শিপিং পান ৫০$ অর্ডারে।",
+        "top_bar_bg": "#000000",
+        "top_bar_text_color": "#ffffff",
+        "alignment": "center"
+      }
     },
-
-    "order": [
-        "Announcementbar",
-        "Header"
-
-    ]
-
-
-
+    "Header": {
+      "type": "header",
+      "settings": {
+        "header_bg": "#000000",
+        "header_text": "Header Main Text",
+        "menu": "main-menu"
+      }
+    },
+    "featured_collection_Dg4KkE": {
+      "type": "featured-collection",
+      "name": "Product Collection",
+      "settings": {
+        "collection": "polo",
+        "heading": "Featured Section",
+        "subheading": ""
+      }
+    }
+  },
+  "order": [
+    "Announcementbar",
+    "Header",
+    "featured_collection_Dg4KkE"
+  ]
 }
-
-
-
-
-
-
