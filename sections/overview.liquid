@@ -1,0 +1,115 @@
+{% style %}
+    .overview-blocks {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .overview-thumb {
+        margin-right: 30px;
+    }
+    .overview-blocks.end {
+        flex-direction: row-reverse;
+    }
+
+    .overview-blocks.end .overview-thumb {
+        margin-right: 0px;
+        margin-left: 30px;
+    }
+
+{% endstyle %}
+
+
+<div class="overview-section">
+    <div class="overview-blocks {{ section.settings.alignment }}">
+        <div class="overview-thumb">
+
+            {% if section.settings.image != blank %}
+                {{ section.settings.image | image_url: width: 500 |  image_tag }}
+            {% else %}
+                {{ 'product-apparel-1' |  placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+
+        </div>
+        <div class="overview-text">
+            <h2>{{ section.settings.title }}</h2>
+            <p>{{ section.settings.subtitle }}</p>
+            <a href="{{ section.settings.button_url }}">{{ section.settings.button_label }}</a>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Overview Section",
+    "settings": [
+
+        {
+            "type": "image_picker",
+            "id" : "image",
+            "label" : "Upload image"
+        },  
+
+        {
+            "type" : "text",
+            "id" : "title",
+            "label" : "Give heading",
+            "default": "Image with text"
+        },
+
+        {
+            "type" : "text",
+            "id" : "subtitle",
+            "label" : "Give subtitle",
+            "default": "Sub Text"
+        },
+
+        {
+            "type" : "text",
+            "id" : "button_label",
+            "label" : "Give Button Label",
+            "default": "Click Here"
+        },
+
+        {
+            "type" : "text",
+            "id" : "button_url",
+            "label" : "Give Button Link",
+            "default": "#"
+        },
+
+        {
+            "type": "select",
+            "id": "alignment",
+            "label": "Swicth direction",
+            "options": [
+                {
+                "value": "start",
+                "label": "Image Left"
+                },
+                {
+                "value": "end",
+                "label": " Image Right"
+                }
+            ],
+            "default": "start"
+            }
+
+        ],
+
+        "presets": [
+            {
+                "name" : "Overview",
+                "category" : "Image"
+            }
+        ]
+}
+{% endschema %}
+
+
+
+
+

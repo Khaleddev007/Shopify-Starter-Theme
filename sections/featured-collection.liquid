@@ -9,7 +9,7 @@
                     <h2>{{ section.settings.heading }}</h2>
 
                     {% if section.settings.subheading != blank %}
-                    <p>{{ section.settings.subheading }}</p>
+                    {{ section.settings.subheading }}
                     {% endif %}
 
 
@@ -28,7 +28,17 @@
                     <div class="product-info">
                         <h3>{{ collection.title }}</h3>
                         <div class="price">{{ collection.price | money }}</div>
+                        <div class="info-box">
+                            {{ collection.variants.first.id }}
+                        </div>
                         <a href="{{ collection.url }}">Details</a>
+
+                        <form method="post" action="/cart/add">
+                            <input type="hidden" name="id" value="{{ collection.variants.first.id }}" />
+                            <input type="hidden" name="quantity" value="1" />
+                            <input type="submit" value="Add to cart" class="btn" />
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -76,6 +86,8 @@
                 "label" : "Featured Collection"
             },
 
+        
+
             {
                 "type" : "text",
                 "id" : "heading",
@@ -95,7 +107,7 @@
         "presets": [
            {
              "name" : "Product Collection",
-             "category" : "collection"
+             "category" : "Collection"
            }
         ]
     }

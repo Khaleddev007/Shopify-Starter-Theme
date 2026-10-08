@@ -10,3 +10,8 @@ html{
     width: 100%;
     height: auto;
 }
+
+.product-tumb img, .column-thumb img  {
+    width: 100%;
+    height: auto;
+}

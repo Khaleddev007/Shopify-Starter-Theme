@@ -1,0 +1,29 @@
+.product-media-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+/* Pills CSS */
+
+.variant-pills {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.variant-pills input[type="radio"] {
+    display: none;
+}
+
+.variant-pills .variant-button {
+    display: inline-block;
+    padding: 3px 5px;
+    background-color: #ddd;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.variant-pills input[type="radio"]:checked + .variant-button {
+    background-color: #000;
+    color: #fff;
+}

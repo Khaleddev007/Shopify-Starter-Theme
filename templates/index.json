@@ -8,29 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "heading": "This is Heading",
-        "subheading": "",
-        "label_1": "Know More",
-        "url_1": "",
-        "banner_content_width": 50
-      }
+    "sections": {
+        "image_banner": {
+            "type": "image-banner",
+            "settings": {}
+        }
     },
-    "featured_collection_LCwNF3": {
-      "type": "featured-collection",
-      "name": "Product Collection",
-      "settings": {
-        "collection": "polo",
-        "heading": "Featured Section New",
-        "subheading": "<p>Sub Heading</p>"
-      }
-    }
-  },
-  "order": [
-    "image_banner",
-    "featured_collection_LCwNF3"
-  ]
+    "order":[
+        "image_banner"
+    ]
 }

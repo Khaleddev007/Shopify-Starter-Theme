@@ -1,0 +1,140 @@
+<div class="multicolumn-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="multicolum-heading">
+                    <h2>{{ section.settings.block_sec_title }}</h2>
+                    <p>{{ section.settings.block_sub_title }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+
+        {%  for block in section.blocks  %}  
+
+            {% case block.type  %}
+
+            {% when 'column' %}
+            <div class="col-lg-4">
+                <div class="column-box">
+                    <div class="column-thumb">
+
+                    {% if  block.settings.block_img != blank %}
+                        {{ block.settings.block_img | image_url: width: 200 |  image_tag }}   
+                    {% else %}
+                       {{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+
+                    </div>
+                    <h3>{{ block.settings.block_title }}</h3>
+                    <p>{{ block.settings.block_subtitle }}</p>
+                </div>
+            </div>
+
+            {% when 'review' %}
+
+                <div class="reviw-img">
+                {% if  block.settings.review_image != blank %}
+                    {{ block.settings.review_image | image_url: width: 200 |  image_tag }}   
+                {% else %}
+                    {{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
+                
+
+            {% endcase %}
+
+            {% endfor %} 
+
+
+
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Multicolumn",
+    "settings": [
+            {
+                "type" : "text",
+                "id" : "block_sec_title",
+                "label" : "Title",
+                "default": "Heading"
+            },
+
+            {
+                "type" : "text",
+                "id" : "block_sub_title",
+                "label" : "Sub Title",
+                "default": "Sub Heading"
+            }
+        ],
+
+        "blocks": [
+            {
+                "type" : "column",
+                "name" : "Column",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id" : "block_img",
+                        "label" : "Upload blcok image"
+                    },
+
+                     {
+                        "type" : "text",
+                        "id" : "block_title",
+                        "label" : "Block Title",
+                        "default": "Block Title"
+                    },
+
+                    {
+                        "type" : "text",
+                        "id" : "block_subtitle",
+                        "label" : "Block Sub Title",
+                        "default": "Paragraph"
+                    }
+
+
+                ]
+            },
+
+            {
+                "type" : "review",
+                "name" : "Review",
+                "settings": [
+                    {
+                        "type" : "image_picker",
+                        "id" : "review_image",
+                        "label" : "Upload review image"
+                    }
+                ]
+            }
+        ],
+
+        "presets": [
+            {
+                "name" : "Multicolumn",
+                "category" : "Image",
+                "blocks" : [
+                    {
+                        "type" : "column"
+                    },
+
+                    {
+                        "type" : "column"
+                    },
+
+                    {
+                        "type" : "column"
+                    }
+                ]
+            }
+        ]
+
+
+}
+{% endschema %}
